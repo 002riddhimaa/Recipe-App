@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Book</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Recipe Book</h1>
+
+    <!-- Search and Add Recipe -->
+    <div class="search-container">
+      <input type="text" id="search" placeholder="Search for recipes...">
+      <button onclick="searchRecipe()">Search</button>
+      <button onclick="openAddRecipeForm()">Add Recipe</button>
+    </div>
+
+    <!-- Recipe List -->
+    <div class="recipe-list" id="recipe-list">
+      <!-- Recipes will be dynamically added here -->
+    </div>
+
+    <!-- Add Recipe Form (Hidden) -->
+    <div class="add-recipe-form" id="add-recipe-form">
+      <h2>Add Recipe</h2>
+      <form onsubmit="addRecipe(event)">
+        <label for="recipe-name">Recipe Name:</label>
+        <input type="text" id="recipe-name" required><br><br>
+        
+        <label for="ingredients">Ingredients:</label>
+        <textarea id="ingredients" required></textarea><br><br>
+        
+        <label for="instructions">Instructions:</label>
+        <textarea id="instructions" required></textarea><br><br>
+        
+        <button type="submit">Add Recipe</button>
+        <button type="button" onclick="closeAddRecipeForm()">Cancel</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
